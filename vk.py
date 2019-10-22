@@ -3,7 +3,8 @@ import random
 import re
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-driver = webdriver.Chrome(executable_path=r'/Users/cnails/Downloads/chromedriver')
+
+driver = webdriver.Chrome(os.path.join(os.path.abspath(os.path.dirname(__file__)), "chromedriver"))
 link2 = "http://kquote.ru/quotes/pulp-fiction.html"
 driver.get(link2)
 time.sleep(0.2)
