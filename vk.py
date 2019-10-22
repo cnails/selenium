@@ -8,11 +8,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 import urllib.request
 
+# def	readmes():
+
+
 def dwnpc(i = 0):
 	driver.get(random.choice(groups))
 	time.sleep(0.2)
 	imgs = []
-	photos = driver.find_elements_by_css_selector("div.wall_text  [onclick*='.userapi']")
+	photos = driver.find_elements_by_css_selector("div.wall_text [onclick*='.userapi']")
 	photos1 = [pht.get_attribute("style") for pht in photos]
 	for photo in photos1:
 		i = 0
@@ -36,7 +39,7 @@ driver = webdriver.Chrome(os.path.join(os.path.abspath(os.path.dirname(__file__)
 link2 = "http://kquote.ru/quotes/pulp-fiction.html"
 driver.get(link2)
 time.sleep(0.2)
-groups = ["https://vk.com/wtf.rasha", "https://vk.com/dank_memes_ayylmao", "https://vk.com/ru9gag"]
+groups = ["https://vk.com/wtf.rasha", "https://vk.com/dank_memes_ayylmao", "https://vk.com/ru9gag", "https://vk.com/reddit", "https://vk.com/justputin2024"]
 elements = driver.find_elements_by_css_selector(".text_quote")
 elem1 = [elen.get_attribute('innerHTML') for elen in elements]
 elem2 = [re.sub('<br>', '\t', elen1) for elen1 in elem1]
@@ -61,7 +64,7 @@ while (i != 0):
 		if messagetest:
 			messagetest.click()
 			inputarea = driver.find_element_by_css_selector("input[type='file'][name='media']")
-			# elem = random.choice(elems)
+			# # elem = random.choice(elems)
 			logo = urllib.request.urlopen(img).read()
 			f = open("mem.jpg", "wb")
 			f.write(logo)
@@ -73,7 +76,7 @@ while (i != 0):
 				# 		inputarea.send_keys(Keys.COMMAND + Keys.ENTER)
 				# 	else:
 				# 		inputarea.send_keys(ch)
-			time.sleep(0.1)
+			time.sleep(0.7)
 			driver.find_element_by_css_selector(".im-send-btn._im_send").click()
 			nazad = driver.find_element_by_css_selector(".im-page--back-btn[href=\"/im?tab=all\"]").click()
 			img = dwnpc()
