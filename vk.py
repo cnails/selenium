@@ -14,9 +14,9 @@ elems = [re.sub('\n', '', elen2) for elen2 in elem2]
 link = "https://vk.com/im"
 driver.get(link)
 emailarea = driver.find_element_by_css_selector("#email.big_text")
-emailarea.send_keys("89859064657")
+emailarea.send_keys(input())
 passarea = driver.find_element_by_css_selector("#pass.big_text")
-passarea.send_keys("Bongowert11")
+passarea.send_keys(input())
 loginarea = driver.find_element_by_css_selector("#login_button")
 loginarea.click()
 time.sleep(0.5)
