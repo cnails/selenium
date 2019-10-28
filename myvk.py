@@ -22,7 +22,6 @@ osplat = platform.system()
 link_citata = "http://kquote.ru/quotes/pulp-fiction.html"
 link = "https://vk.com/im"
 driver = (webdriver.Chrome() if osplat == "Windows" else webdriver.Chrome(os.path.join(os.path.abspath(os.path.dirname(__file__)), "chromedriver")))
-
 def citata():
 	driver.get(link_citata)
 	elements = driver.find_elements_by_css_selector(".text_quote")
